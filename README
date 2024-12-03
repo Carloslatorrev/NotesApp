@@ -1,0 +1,104 @@
+# Notas App
+
+Este es un proyecto de aplicación de notas con autenticación de usuario y manejo de notas. Utiliza **React** con **TypeScript** para la interfaz de usuario (frontend) y **FastAPI** con **Python** para el backend. 
+
+## Estructura del Proyecto
+
+- **Frontend**: React (TypeScript)
+- **Backend**: FastAPI (Python)
+- **Base de Datos**: PostgreSQL (u otro motor SQL de tu preferencia)
+
+## Características
+
+- Crear, editar, eliminar y obtener notas.
+- Autenticación de usuario (registro, login).
+- Actualización de las notas con control de versión (optimistic locking).
+- Interfaz de usuario interactiva y dinámica.
+
+---
+
+## Instalación
+
+### Backend (FastAPI)
+
+1. **Clonar el repositorio**:
+    ```bash
+    git clone https://github.com/Carloslatorrev/NotesApp.git
+    ```
+
+2. **Crear un entorno virtual**:
+    ```Dentro de la carpeta de NoteApp (python)
+    ```bash
+    python -m venv .venv
+    ```
+
+3. **Activar el entorno virtual**:
+    - En Linux/macOS:
+      ```bash
+      source .venv/bin/activate
+      ```
+    - En Windows:
+      ```bash
+      .venv\Scripts\activate
+      ```
+
+4. **Instalar las dependencias**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+5. **Configuración de la base de datos**:
+   - Base de datos postgres, ejecutar script adjunto dentro del repositorio, creará base de datos y tablas. Se conectará al servidor local, puerto 5432
+    usuario: postgres
+    passadmin
+
+6. **Ejecutar el servidor**:
+    ```bash
+    uvicorn app.main:app --reload
+    ```
+
+    - El servidor estará disponible en [http://localhost:8000](http://127.0.0.1:8000).
+
+---
+
+### Frontend (React con TypeScript)
+
+1. **Navegar al directorio frontend**:
+    ```bash
+    cd ../NotesWeb
+    ```
+
+2. **Instalar dependencias**:
+    ```bash
+    npm install
+    ```
+
+3. **Iniciar el servidor de desarrollo**:
+    ```bash
+    npm start
+    ```
+
+    - La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Rutas de la API
+
+### Autenticación
+
+- **POST** `/login`: Iniciar sesión.
+- **POST** `/register`: Registrar un nuevo usuario.
+
+### Notas
+
+- **GET** `/notes`: Obtener todas las notas del usuario actual.
+- **GET** `/notes/{id}`: Obtener una nota por su ID.
+- **POST** `/notes`: Crear una nueva nota.
+- **PUT** `/notes/{id}`: Actualizar una nota existente.
+- **DELETE** `/notes/{id}`: Eliminar una nota.
+
+---
+
+## Estructura de Archivos
+
+### Backend
